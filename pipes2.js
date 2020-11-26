@@ -7,7 +7,7 @@ function attach_event_listener_to_demo_btn(  ) {
         graphBlocks.direction = '+'; // start to end
         graphBlocks.current = 0;
         var $title= document.getElementById("title");
-        var result = aricle_pipe.exec( );
+        var result = aricle_pipe.fifo().exec( );
         result.then(function( _ ) { 
             var res = block_pipe.exec(graphBlocks);
             res.then(function( _ ) { $title.innerText = '------- (((( Demo finished ))))-------'});
@@ -41,19 +41,25 @@ function attach_event_listener_to_reverse_demo_btn(  ) {
                     };  
 
   var $block6 = document.querySelector('#elementToAnimate');
+  var rect = $block6.getBoundingClientRect();
+  var offsetTop = window.pageYOffset + rect.top - rect.height;
   var $lastblock = {
-                    top: $block6.style.top,
-                    left: $block6.style.left,
+                    top: offsetTop +'px',
+                    left: 0 +'px',
   }; 
 
   function start_animation( e ) {
     e.classList.add("animate");
-    e.style.top = Math.floor(Math.random() * window.innerHeight) + 'px';
-    e.style.left = Math.floor(Math.random() * window.innerWidth) + 'px';
+    e.style.top = Math.floor(Math.random() * (window.innerHeight / 2 )) + 'px';
+    e.style.left = Math.floor(Math.random() * (window.innerWidth / 2 )) + 'px';
+  }  
+
+  function start_animation2( e ) {
+    e.style.top = Math.floor(Math.random() * (window.innerHeight / 2 )) + 'px';
+    e.style.left = Math.floor(Math.random() * (window.innerWidth / 2 )) + 'px';
   }  
 
   function stop_animation( e ) {
-    e.classList.remove("animate");
     e.style.top = $lastblock.top;
     e.style.left = $lastblock.left;
   }  
@@ -66,29 +72,28 @@ function attach_event_listener_to_reverse_demo_btn(  ) {
   var fb4 = function( gbks ) { var x = gbks.direction==='+'?1:-1; gbks.container[gbks.current].style.top = gbks.direction+'25px'; gbks.current += x; return gbks; }
   var fb5 = function( gbks ) { var x = gbks.direction==='+'?1:-1; gbks.container[gbks.current].style.top = gbks.direction+'25px'; gbks.current += x; return gbks; }
   var fb6 = function( gbks ) { var x = gbks.direction==='+'?1:-1; gbks.container[gbks.current].style.top = gbks.direction+'25px'; gbks.current += x; return gbks; }
-  var fb6 = function( gbks ) { var x = gbks.direction==='+'?1:-1; gbks.container[gbks.current].style.top = gbks.direction+'25px'; gbks.current += x; return gbks; }
-  var fb7 = function( gbks ) { gbks.direction==='+'?start_animation($block6):stop_animation($block6); return gbks; }
-  var fb8 = function( gbks ) { gbks.direction==='+'?start_animation($block6):stop_animation($block6); return gbks; }
+  var fb7 = function( gbks ) { gbks.direction==='+'?start_animation($block6):stop_animation($block6); return gbks; }  
+  var fb8 = function( gbks ) { gbks.direction==='+'?stop_animation($block6):start_animation($block6); return gbks; }  
 
   var block_pipe = mac.pipe( 
-                          mac.async_delay(500), 
+                          mac.async_delay(700), 
                           fb1, 
-                          mac.async_delay(800), 
+                          mac.async_delay(400), 
                           fb2, 
-                          mac.async_delay(800),
+                          mac.async_delay(400),
                           fb3, 
-                          mac.async_delay(800),
+                          mac.async_delay(400),
                           fb4, 
-                          mac.async_delay(800),
+                          mac.async_delay(400),
                           fb5, 
-                          mac.async_delay(800),
+                          mac.async_delay(400),
                           fb6, 
-                          mac.async_delay(800),
+                          mac.async_delay(400),
                           fb7, 
-                          mac.async_delay(800),
+                          mac.async_delay(400),
                           fb8, 
-                          mac.async_delay(500),
-                    ).fifo( );
+                          mac.async_delay(700),
+                    );
 
 console.log('block_pipe queue:', block_pipe.queue);                      
 console.log('block_pipe stack:', block_pipe.stack);                      
@@ -103,14 +108,14 @@ var art2 = function( ) { var x = graphBlocks.direction==='+'?'Changed to UpperCa
 var art3 = function( ) { var x = graphBlocks.direction==='+'?'Changed to UpperCase ARTICLE 3':'Article 3'; var f = graphBlocks.direction==='+'?'bold':'400';$article3.innerText = x; $article3.style.fontWeight = f; }
 
 var aricle_pipe = mac.pipe( 
-                        mac.async_delay(500), 
-                        art1, 
                         mac.async_delay(800), 
+                        art1, 
+                        mac.async_delay(400), 
                         art2, 
-                        mac.async_delay(800),
+                        mac.async_delay(400),
                         art3, 
-                        mac.async_delay(500),
-                  ).fifo( );
+                        mac.async_delay(800),
+                  );
 
 console.log('aricle_pipe queue:', aricle_pipe.queue);                      
 console.log('aricle_pipe stack:', aricle_pipe.stack);                      

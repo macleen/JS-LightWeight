@@ -87,19 +87,22 @@
         this.queue = fQ;
         this.stack = 'fifo';
         this.queue_size = this.queue.length;
-        this.lifo   = ( ) => { this.stack = 'lifo'; return this; },
-        this.fifo   = ( ) => { this.stack = 'fifo'; return this; },
-        this.random = ( ) => { this.stack = 'random'; return this; },
-        this.exec   =  o  => { 
-                               if ( this.stack === 'random' ) 
-                                    this.queue = shuffleArray( this.queue ); 
-                               var  q = this.stack === 'lifo' 
-                                      ? asyncReducerRight( ...this.queue )
-                                      : asyncReducerLeft ( ...this.queue ); 
-                               return q( o );
-                             }
     };
 
+    pipeObject.prototype = {
+        lifo   : function( ) { this.stack = 'lifo'; return this; },
+        fifo   : function( ) { this.stack = 'fifo'; return this; },
+        random : function( ) { this.stack = 'random'; return this; },
+        exec   : function(o) { 
+                          if ( this.stack === 'random' ) 
+                               this.queue = shuffleArray( this.queue ); 
+                          var  q = this.stack === 'lifo' 
+                                 ? asyncReducerRight( ...this.queue )
+                                 : asyncReducerLeft ( ...this.queue ); 
+                          return q( o );
+                        }
+
+    }
     //*************************************************************
 
     var lw = function( ) {
@@ -171,7 +174,7 @@
         },
 
         /************************************************************* 
-         * Stoarge engine: 
+         * Storage engine: 
          * 
          *     2 MB to 10 MB size of data can be stored on the client machine depending on the browser  
          *     for chrome: Web storage APIs (LocalStorage & SessionStorage ) remain fixed at 5 MB.

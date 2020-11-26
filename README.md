@@ -31,13 +31,13 @@ Storage Usage:
     //save name in storage: 
     storage.name ="value";
 
-    //save name in storage: 
+    //save json object in storage: 
     storage.settings = JSON.stringify({color:'black', user_name:'tester', last_login:'1654874521})";
 
     //get name from storage: 
     var name = storage.name;
 
-    //get the settings from storage: 
+    //get then convert saved setting from storage: 
     var settings = JSON.parse(storage.settings);    
 
     //get used storage type: 
@@ -52,7 +52,7 @@ Storage Usage:
 
 ---------------------------------------------------------
 
-Async delay usage: ( to eb used mainly with the async pipes)
+Async delay usage: ( to be used mainly with the async pipes)
 
     var wait = l.async_delay( milli_seonds ); // returns a closure with milli_seconds as param
     var delayed_task = wait( task ); // task can be an object, a function or any other data type
