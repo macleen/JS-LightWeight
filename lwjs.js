@@ -93,15 +93,13 @@
         lifo   : function( ) { this.stack = 'lifo'; return this; },
         fifo   : function( ) { this.stack = 'fifo'; return this; },
         random : function( ) { this.stack = 'random'; return this; },
+        // use append to queue and prepnd to queue instead of inject
         inject : function(f, where) {
                                if ( typeof f === 'function' ) {
-                                    where = (where || 'top',
-                                            !['top','bottom'].includes( where ) ? 'top' : where);
-                                     console.log( 'queue before: ', this.queue );
+                                    where = !['top','bottom'].includes( where ) ? 'top' : where;
                                     if ( where === 'top')         
                                          this.queue.unshift( f ); 
                                     else this.queue.push( f );
-                                    console.log( 'queue after: ', this.queue );
                                } else throw new Error('Injected object must be invocable');
                                return this;
                              },         
