@@ -2,6 +2,10 @@
 
 > Extensible LightWeight JS LIB whitout any xternal dependency
 
+## Introduction
+
+**LightWeight-JS** is a small sized javascript library with components and functions that are most useful in many projects and other libraries, noticeable the storage functionality and the pipelining pattern which remains **reusable** through out the whole application. You can create pipelines consisting of one or more stages using **different payloads** passed from stage to the next in the order you select.
+
 
 ## Components
    -  A handy storage engine; 
