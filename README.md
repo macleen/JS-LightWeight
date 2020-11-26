@@ -95,7 +95,7 @@ resultRandom.then(function( res ) { console.log( 'result from '+pipeRandom.stack
 
 
 Please run the index.html on your browser to see an example with a simple animation demo
-
+or go to this link: https://tradingunited.org/test/
 
 ---------------------------------------------------------
  Author: C. Mahmoud / MacLeen 2020 v 1.0.0 / email: acutclub@gmail.com
