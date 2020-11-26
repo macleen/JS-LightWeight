@@ -15,7 +15,7 @@
 
    - Async pipelining;
      Using promise chaining ( sequential function queue execution );
-     Queue can be executed forward(FIFO), backward(LIFO) or random;    
+     Queue can be executed **forward(FIFO), backward(LIFO) or random**;    
      very usefull in currying/function composition; 
      could also be coupled to any async API such as ajax or the fetch API;
 
@@ -62,7 +62,8 @@
 ```
 ---------------------------------------------------------
 
-## Async delay usage: ( to be used mainly with the async pipes)
+## Async delay usage: 
+**( to be used mainly with the async pipes)**
 
 ```javascript
 
@@ -78,7 +79,7 @@
 
 ---------------------------------------------------------
 
-## Pipelining usage: ( async pipes ) 
+## Pipeline usage: ( async pipes ) 
 
 ```javascript
     var l = lw( ); // create the main lib instance
@@ -112,7 +113,7 @@
 or go to this link: https://tradingunited.org/test/
 
 ---------------------------------------------------------
- >Author: C. Mahmoud / MacLeen 2020 v 1.0.0 / email: acutclub@gmail.com
+ >Author: C. Mahmoud / MacLeen 2020 v 1.0.0 / email: **acutclub@gmail.com**
  
  
  for bugs or info please contact me on my email.
