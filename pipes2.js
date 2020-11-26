@@ -7,7 +7,7 @@ function attach_event_listener_to_demo_btn(  ) {
         graphBlocks.direction = '+'; // start to end
         graphBlocks.current = 0;
         var $title= document.getElementById("title");
-        var result = aricle_pipe.fifo().exec( );
+        var result = article_pipe.fifo().exec( );
         result.then(function( _ ) { 
             var res = block_pipe.exec(graphBlocks);
             res.then(function( _ ) { $title.innerText = '------- (((( Demo finished ))))-------'});
@@ -23,7 +23,7 @@ function attach_event_listener_to_reverse_demo_btn(  ) {
       var $title= document.getElementById("title");
       var result = block_pipe.lifo().exec( graphBlocks );
       result.then(function( _ ) { 
-        var res = aricle_pipe.lifo().exec();
+        var res = article_pipe.lifo().exec();
         res.then(function( _ ) { $title.innerText = '------- (((( Reverse demo finished ))))-------'});
       });   
   });
@@ -107,9 +107,7 @@ var art1 = function( ) { var x = graphBlocks.direction==='+'?'Changed to UpperCa
 var art2 = function( ) { var x = graphBlocks.direction==='+'?'Changed to UpperCase ARTICLE 2':'Article 2'; var f = graphBlocks.direction==='+'?'bold':'400';$article2.innerText = x; $article2.style.fontWeight = f; }
 var art3 = function( ) { var x = graphBlocks.direction==='+'?'Changed to UpperCase ARTICLE 3':'Article 3'; var f = graphBlocks.direction==='+'?'bold':'400';$article3.innerText = x; $article3.style.fontWeight = f; }
 
-var aricle_pipe = mac.pipe( 
-                        mac.async_delay(800), 
-                        art1, 
+var article_pipe = mac.pipe( 
                         mac.async_delay(400), 
                         art2, 
                         mac.async_delay(400),
@@ -117,9 +115,11 @@ var aricle_pipe = mac.pipe(
                         mac.async_delay(800),
                   );
 
-console.log('aricle_pipe queue:', aricle_pipe.queue);                      
-console.log('aricle_pipe stack:', aricle_pipe.stack);                      
-console.log('aricle_pipe queue_size:', aricle_pipe.queue_size);                      
+article_pipe.inject(art1).inject(mac.async_delay(800)); 
+
+console.log('article_pipe queue:', article_pipe.queue);                      
+console.log('article_pipe stack:', article_pipe.stack);                      
+console.log('article_pipe queue_size:', article_pipe.queue_size);                      
 
 
 

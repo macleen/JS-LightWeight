@@ -75,7 +75,10 @@ var add10  = function ( x ) { return x + 10;}
 var times2 = function ( x ) { return x * 10;}
 var minus5 = function ( x ) { return x - 5;}
 
-var pipeLeft   = l.pipe( add1, add2, add10, times2, minus5 ).fifo( ); // from left to right, this is the default
+var pipeLeft = l.pipe( add2, add10, times2, minus5 ).fifo( ); // from left to right, this is the default
+
+pipeLeft.inject( add1, 'top' );  // add one more later -- where: 'top' or 'botom / top is default
+
 var pipeRight  = l.pipe( add1, add2, add10, times2, minus5 ).lifo( );// right to left
 var pipeRandom = l.pipe( add1, add2, add10, times2, minus5 ).random( ); // random exec
 

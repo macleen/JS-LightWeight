@@ -93,6 +93,18 @@
         lifo   : function( ) { this.stack = 'lifo'; return this; },
         fifo   : function( ) { this.stack = 'fifo'; return this; },
         random : function( ) { this.stack = 'random'; return this; },
+        inject : function(f, where) {
+                               if ( typeof f === 'function' ) {
+                                    where = (where || 'top',
+                                            !['top','bottom'].includes( where ) ? 'top' : where);
+                                     console.log( 'queue before: ', this.queue );
+                                    if ( where === 'top')         
+                                         this.queue.unshift( f ); 
+                                    else this.queue.push( f );
+                                    console.log( 'queue after: ', this.queue );
+                               } else throw new Error('Injected object must be invocable');
+                               return this;
+                             },         
         exec   : function(o) { 
                           if ( this.stack === 'random' ) 
                                this.queue = shuffleArray( this.queue ); 
@@ -271,6 +283,8 @@
         * 
         *   or
         *        var pipe = l.pipe( f1, f2, f3 );
+        *   
+        *        pipe.inject( f, where );  // add one more -- where: 'top' or 'botom
         * 
         *        var pipe_queue = pipe.queue; // get queue content
         *        var stack      = pipe.stack; // get used stacking method ( lifo, fifo, random )                     
