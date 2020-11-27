@@ -8,7 +8,11 @@
 
 
 ## Components
-   -  A handy storage engine; 
+
+   -  Helpers ; 
+     Some helpers, those which are believed to be most needed in applications are redesigned or created 
+
+   -  A handy client-side storage engine; 
      (local and cross session) using the native Browser API (session and local storage API);
      2 MB to 10 MB size of data can be stored on the client machine depending on the browser;  
      for chrome: Web storage APIs (Local & Session ) remain fixed at 5 MB.
@@ -19,7 +23,72 @@
      very usefull in currying/function composition; 
      could also be coupled to any async API such as ajax or the fetch API;
 
+---------------------------------------------------------
 
+## helpers:
+
+**type_of**
+```javascript
+
+    var l = lw( ); // create the main lib instance
+
+    l.type_of([])        => 'array';
+    l.type_of(object)    => 'object';
+    l.type_of(promise)   => 'promise';
+    l.type_of(primitive) => primitive type ['number', 'boolean', 'string', null, undefined]    
+    l.type_of(function)  => function types ['function', 'asyncfunction','generatorfunction','constructorfunction']
+```
+
+**is_callable** & **is_pomise**
+```javascript
+
+    var l = lw( ); // create the main lib instance
+
+    l.is_callable( f )   => boolean; 
+    l.is_promise( p )    => boolean;// using type_of === 'promise'
+
+
+```
+
+**extend**
+>Is inspired from jQuery extend function and using the same syntax
+
+
+**clone**
+
+```javascript
+
+    var l = lw( ); // create the main lib instance
+    l.clone( o )  => cloned_object; 
+
+```
+
+**random_number**
+
+```javascript
+
+    var l = lw( ); // create the main lib instance
+    l.random_number( max_exclusive )  => // returns n included in [0..max_exclusive[
+
+```
+
+**random_array_element**
+
+```javascript
+
+    var l = lw( ); // create the main lib instance
+    l.random_array_element( arr )  => random_arr_element;
+
+```
+
+**shuffle_array**
+
+```javascript
+
+    var l = lw( ); // create the main lib instance
+    l.shuffle_array( arr )  => shuffled_array; 
+
+```
 
 ---------------------------------------------------------
 
