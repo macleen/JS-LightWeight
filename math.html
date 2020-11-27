@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Testing the lw lightweight JS lib</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            code {
+                font-family: Consolas,"courier new";
+                color: crimson;
+                background-color: #f1f1f1;
+                padding: 2px;
+                font-size: 105%;
+                line-height: 1.8rem;
+            }
+            .result-spans {
+                color: red;
+                margin-left: 1.rem;
+                font-size:1.8rem;
+                font-weight:bold;
+            }
+            #title {
+                background-color: #bca;
+                width: 40% !important;
+                height: 1.1em;
+                text-align: center;
+                border: 2px solid green;
+                margin: .5rem auto;
+                font-size: 2rem;
+                margin-bottom: 2rem;
+            }
+
+            ul > li {
+                font-size: 1.2rem;
+            }
+            div {
+                display: block !important;
+            }
+
+            div.block {
+                position: relative;
+                background-color: #abc;
+                width: 40px;
+                height: 40px;
+                float: left;
+                margin: 5px;
+            }
+            #elementToAnimate {
+                background: red;
+                }
+
+            #elementToAnimate.animate {
+                transition: left 500ms ease-in-out, top 500ms ease-in-out;
+            }
+        </style>        
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <h1 id="title" style="width:100%;">Concurrency</h1>
+        <ul class="funcs">
+            <li id="func0"><code>var add1 &nbsp; = function(x) { return x + 01 }</code></li>
+            <li id="func1"><code>var add2 &nbsp; = function(x) { return x + 02 }</code></li>
+            <li id="func2"><code>var add10 &nbsp;= function(x) { return x + 10 }</code></li>
+            <li id="func3"><code>var times2      = function(x) { return x * 10 }</code></li>
+            <li id="func4"><code>var minus5      = function(x) { return x - 05 }</code></li>
+        </ul>    
+
+        <h2 id="" style="width:100%;">Pipelines</h2>
+        <ul class="results">
+            <li id="results0"><code>var pipeLeft &nbsp; = l.pipe( add1,add2, add10, times2, minus5 ).fifo( ).exec( 10 );</code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="result-spans" id="result-left">00</span></li>
+            <li id="results0"><code>var pipeRight  &nbsp;= l.pipe( add1, add2, add10, times2, minus5 ).lifo( ).exec( 10 );</code>&nbsp;&nbsp;&nbsp;&nbsp;<span class="result-spans" id="result-right">00</span></li>
+            <li id="results0"><code>var pipeRandom = l.pipe( add1, add2, add10, times2, minus5 ).random( ).exec( 10 );</code><span class="result-spans" id="result-random">00</span></li>
+        </ul>    
+
+        <div id="animation_btns" style="clear: left;font-size:4rem;width: 100%;text-align:center;">
+            <button id="startDemo" style="width:60%;font-size:1.4rem;">Start Demo</button>
+        </div>
+
+        <script src="./lwjs.js"></script>
+        <script src="./pipes3.js" async defer></script>
+    </body>
+</html>

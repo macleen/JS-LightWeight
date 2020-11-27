@@ -194,6 +194,12 @@ A graphic demo shows the injection of the delay time between each call.
 this example is included in the list above and here is a ready made demo of it\
 check it out **https://tradingunited.org/tests/lwjs/animation.html**
 
+**[ 3 ]**
+
+A math demo showing the implementation of function composition.
+this example is included in the list above and here is a ready made demo of it\
+check it out **https://tradingunited.org/tests/lwjs/math.html**
+
 ---------------------------------------------------------
  >Author: C. Mahmoud / MacLeen 2020 v 1.0.0 / email: **acutclub@gmail.com**\
  >For bugs, suggestions or any other info please contact me on my email.
