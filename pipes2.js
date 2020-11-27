@@ -1,30 +1,41 @@
 var mac = l();
 console.log(mac);
-
+var demo_btn = document.getElementById("startDemo");
+var reverse_demo_btn = document.getElementById("reverseAnimate");
+reverse_demo_btn.disabled = true;
 
 function attach_event_listener_to_demo_btn(  ) {
-    document.getElementById("startDemo").addEventListener("click", function(){
+  demo_btn.addEventListener("click", function(){
+        reverse_demo_btn.disabled = true;
         graphBlocks.direction = '+'; // start to end
         graphBlocks.current = 0;
         var $title= document.getElementById("title");
         var result = article_pipe.fifo().exec( );
         result.then(function( _ ) { 
             var res = block_pipe.exec(graphBlocks);
-            res.then(function( _ ) { $title.innerText = '------- (((( Demo finished ))))-------'});
+            res.then(function( _ ) { 
+              reverse_demo_btn.disabled = false;
+              demo_btn.disabled = true;
+              $title.innerText = '------- (((( Demo finished ))))-------'});
         });    
   });
 }
 
 
 function attach_event_listener_to_reverse_demo_btn(  ) {
-  document.getElementById("reverseAnimate").addEventListener("click", function(){
+  reverse_demo_btn.addEventListener("click", function(){
+      demo_btn.disabled = true;
       graphBlocks.direction = '-'; // end to start
       graphBlocks.current = 5;
       var $title= document.getElementById("title");
       var result = block_pipe.lifo().exec( graphBlocks );
       result.then(function( _ ) { 
-        var res = article_pipe.lifo().exec();
-        res.then(function( _ ) { $title.innerText = '------- (((( Reverse demo finished ))))-------'});
+          var res = article_pipe.lifo().exec();
+          res.then(function( _ ) { 
+              reverse_demo_btn.disabled = true;
+              demo_btn.disabled = false;
+              $title.innerText = '------- (((( Reverse demo finished ))))-------'
+          });
       });   
   });
 }
