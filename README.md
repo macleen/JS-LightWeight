@@ -178,11 +178,19 @@
 
 
 
-> Please run the index.html on your browser to see an example with a simple animation demo
-or go to this link: https://tradingunited.org/test/
+## Examples
+
+**[ 1 ]**
+
+4 Async server calls are being made ( simulating server requests ), these calls are supposed to be interdependant **call[1]->needs-->call[3]->needs-->call[2]->needs-->call[1]->needs-->params** so the order of execution and result output is vital here.
+you will see how each call waits for the the previous to return before running.
+this example is included in the list above and here is a ready made demo of it **https://tradingunited.org/tests/lwjs/concurrency.html
+
+**[ 2 ]**
+
+A graphic demo shows the injection of the delay time between each call.
+this example is included in the list above and here is a ready made demo of it **https://tradingunited.org/tests/lwjs/animation.html
 
 ---------------------------------------------------------
  >Author: C. Mahmoud / MacLeen 2020 v 1.0.0 / email: **acutclub@gmail.com**
- 
- 
- for bugs or info please contact me on my email.
+ >for bugs or info please contact me on my email.
