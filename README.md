@@ -21,7 +21,7 @@
      Using promise chaining ( sequential function queue execution )\
      Queue can be executed **forward(FIFO), backward(LIFO) or random**\
      very usefull in currying, partial functions and function composition\
-     could also be coupled to any async API such as ajax or the fetch API\
+     could also be coupled to any async API such as ajax or the fetch API&nbsp;
 
 ---------------------------------------------------------
 
@@ -182,7 +182,7 @@
 
 **[ 1 ]**
 
-4 Async-calls are being made ( simulating server requests ), these calls are supposed to be interdependant\ **stage[4]->needs-->stage[3]->needs-->stage[2]->needs-->stage[1]->needs-->params** so the order of execution and result output are vital here.
+4 Async-calls are being made ( simulating server requests ), these calls are supposed to be interdependant&nbsp; **stage[4]->needs-->stage[3]->needs-->stage[2]->needs-->stage[1]->needs-->params** so the order of execution and result output are vital here.
 you will see how each call waits for the the previous to return before running.
 this example is included in the list above and here is a ready made demo of it\
 check it out **https://tradingunited.org/tests/lwjs/concurrency.html
