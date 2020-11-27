@@ -186,13 +186,13 @@
 **stage[4]->needs-->stage[3]->needs-->stage[2]->needs-->stage[1]->needs-->params** so the order of execution and result output are vital here.
 you will see how each call waits for the the previous to return before running.
 this example is included in the list above and here is a ready made demo of it\
-check it out **https://tradingunited.org/tests/lwjs/concurrency.html
+check it out **https://tradingunited.org/tests/lwjs/concurrency.html**
 
 **[ 2 ]**
 
 A graphic demo shows the injection of the delay time between each call.
 this example is included in the list above and here is a ready made demo of it\
-check it out **https://tradingunited.org/tests/lwjs/animation.html
+check it out **https://tradingunited.org/tests/lwjs/animation.html**
 
 ---------------------------------------------------------
  >Author: C. Mahmoud / MacLeen 2020 v 1.0.0 / email: **acutclub@gmail.com**\
