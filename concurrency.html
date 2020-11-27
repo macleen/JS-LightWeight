@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Testing the lw lightweight JS lib</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            .result-span {
+                color: red;
+            }
+            #title {
+                background-color: #bca;
+                width: 40% !important;
+                height: 1.1em;
+                text-align: center;
+                border: 2px solid green;
+                margin: .5rem auto;
+                font-size: 2rem;
+                margin-bottom: 2rem;
+            }
+
+            ul > li {
+                font-size: 1.2rem;
+            }
+            div {
+                display: block !important;
+            }
+
+            div.block {
+                position: relative;
+                background-color: #abc;
+                width: 40px;
+                height: 40px;
+                float: left;
+                margin: 5px;
+            }
+            #elementToAnimate {
+                background: red;
+                }
+
+            #elementToAnimate.animate {
+                transition: left 500ms ease-in-out, top 500ms ease-in-out;
+            }
+        </style>        
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <h1 id="title" style="width:100%;">Concurrency</h1>
+        <ul class="results">
+            <li id="results0">Result1: <span class="result-span" id="result0">....</span></li>
+            <li id="results1">Result2: <span class="result-span" id="result1">....</span></li>
+            <li id="results2">Result3: <span class="result-span" id="result2">....</span></li>
+            <li id="results3">Result4: <span class="result-span" id="result3">....</span></li>
+        </ul>    
+
+        <div id="animation_btns" style="clear: left;font-size:4rem;width: 100%;text-align:center;">
+            <button id="startDemo" style="width:60%;font-size:1.4rem;">Start Demo</button>
+        </div>
+        <label>Log</label><br>
+        <textarea id="log" style="clear: left; padding-top:0.5rem !important;font-size:1rem;width: 97%;height:15rem;" >Start Demo</textarea>
+
+        <script src="./lwjs.js"></script>
+        <script src="./pipes.js" async defer></script>
+    </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Testing the lw lightweight JS lib</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            #title {
+                background-color: #bca;
+                width: 200px;
+                height: 1.1em;
+                text-align: center;
+                border: 2px solid green;
+                margin: .5rem;
+                font-size: 14px;                
+            }
+
+            div {
+                display: block !important;
+            }
+
+            div.block {
+                position: relative;
+                background-color: #abc;
+                width: 40px;
+                height: 40px;
+                float: left;
+                margin: 5px;
+            }
+            #elementToAnimate {
+                background: red;
+                }
+
+            #elementToAnimate.animate {
+                transition: left 500ms ease-in-out, top 500ms ease-in-out;
+            }
+        </style>        
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <h2 id="title" style="width:100%;">This is a title</h2>
+        <ul class="people">
+            <li id="article1">Article 1</li>
+            <li id="article2">Article 2</li>
+            <li id="article3">Article 3</li>
+        </ul>    
+
+        <p>&nbsp;</p>
+
+        <div id="many-blocks">
+                <div id="block1" class="block"></div>
+                <div id="block2" class="block"></div>
+                <div id="block3" class="block"></div>
+                <div id="block4" class="block"></div>
+                <div id="block5" class="block"></div>
+                <div id="elementToAnimate" class="block"></div>
+         </div>
+
+
+         <div id="animation_btns" style="clear: left; padding-top:3rem !important;font-size:4rem;">
+            <button id="startDemo">Start Demo</button>
+            <button id="reverseAnimate">Reverse demo</button>
+        </div>
+
+        <script src="./lwjs.js"></script>
+        <script src="./pipes2.js" async defer></script>
+    </body>
+</html>
