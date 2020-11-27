@@ -9,19 +9,19 @@
 
 ## Components
 
-   -  **Helpers**.
-     Some helpers, those which are believed to be most needed in applications are redesigned or created 
+   -  **Helpers**\
+     Some helpers, those which are believed to be most needed in applications are redesigned or created\ 
 
-   -  **Storage engine**.
-     (local and cross session) using the native Browser API (session and local storage API).
-     2 MB to 10 MB size of data can be stored on the client machine depending on the browser.
-     for chrome: Web storage APIs (Local & Session ) remain fixed at 5 MB.
+   -  **Storage engine**\
+     (local and cross session) using the native Browser API (session and local storage API)\
+     2 MB to 10 MB size of data can be stored on the client machine depending on the browser\
+     for chrome: Web storage APIs (Local & Session ) remain fixed at 5 MB\
 
-   - **Async pipelining**.
-     Using promise chaining ( sequential function queue execution ).
-     Queue can be executed **forward(FIFO), backward(LIFO) or random**.
-     very usefull in currying/function composition.
-     could also be coupled to any async API such as ajax or the fetch API.
+   - **Async pipelining**\
+     Using promise chaining ( sequential function queue execution )\
+     Queue can be executed **forward(FIFO), backward(LIFO) or random**
+     very usefull in currying/function composition\
+     could also be coupled to any async API such as ajax or the fetch API\
 
 ---------------------------------------------------------
 
@@ -182,15 +182,17 @@
 
 **[ 1 ]**
 
-4 Async-calls are being made ( simulating server requests ), these calls are supposed to be interdependant **call[4]->needs-->call[3]->needs-->call[2]->needs-->call[1]->needs-->params** so the order of execution and result output is vital here.
+4 Async-calls are being made ( simulating server requests ), these calls are supposed to be interdependant\ **stage[4]->needs-->stage[3]->needs-->stage[2]->needs-->stage[1]->needs-->params** so the order of execution and result output are vital here.
 you will see how each call waits for the the previous to return before running.
-this example is included in the list above and here is a ready made demo of it **https://tradingunited.org/tests/lwjs/concurrency.html
+this example is included in the list above and here is a ready made demo of it\
+check it out **https://tradingunited.org/tests/lwjs/concurrency.html
 
 **[ 2 ]**
 
 A graphic demo shows the injection of the delay time between each call.
-this example is included in the list above and here is a ready made demo of it **https://tradingunited.org/tests/lwjs/animation.html
+this example is included in the list above and here is a ready made demo of it\
+check it out **https://tradingunited.org/tests/lwjs/animation.html
 
 ---------------------------------------------------------
- >Author: C. Mahmoud / MacLeen 2020 v 1.0.0 / email: **acutclub@gmail.com**
+ >Author: C. Mahmoud / MacLeen 2020 v 1.0.0 / email: **acutclub@gmail.com**\
  >for bugs or info please contact me on my email.
