@@ -9,19 +9,19 @@
 
 ## Components
 
-   -  **Helpers**
+   -  **Helpers**.
      Some helpers, those which are believed to be most needed in applications are redesigned or created 
 
-   -  **Storage engine** 
-     (local and cross session) using the native Browser API (session and local storage API);
-     2 MB to 10 MB size of data can be stored on the client machine depending on the browser;  
+   -  **Storage engine**.
+     (local and cross session) using the native Browser API (session and local storage API).
+     2 MB to 10 MB size of data can be stored on the client machine depending on the browser.
      for chrome: Web storage APIs (Local & Session ) remain fixed at 5 MB.
 
-   - **Async pipelining**
-     Using promise chaining ( sequential function queue execution );
-     Queue can be executed **forward(FIFO), backward(LIFO) or random**;    
-     very usefull in currying/function composition; 
-     could also be coupled to any async API such as ajax or the fetch API;
+   - **Async pipelining**.
+     Using promise chaining ( sequential function queue execution ).
+     Queue can be executed **forward(FIFO), backward(LIFO) or random**.
+     very usefull in currying/function composition.
+     could also be coupled to any async API such as ajax or the fetch API.
 
 ---------------------------------------------------------
 
