@@ -182,7 +182,7 @@
 
 **[ 1 ]**
 
-4 Async server calls are being made ( simulating server requests ), these calls are supposed to be interdependant **call[1]->needs-->call[3]->needs-->call[2]->needs-->call[1]->needs-->params** so the order of execution and result output is vital here.
+4 Async-calls are being made ( simulating server requests ), these calls are supposed to be interdependant **call[4]->needs-->call[3]->needs-->call[2]->needs-->call[1]->needs-->params** so the order of execution and result output is vital here.
 you will see how each call waits for the the previous to return before running.
 this example is included in the list above and here is a ready made demo of it **https://tradingunited.org/tests/lwjs/concurrency.html
 
