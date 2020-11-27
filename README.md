@@ -39,7 +39,7 @@
     l.type_of(function)  => 'function types' ['function', 'asyncfunction','generatorfunction','constructorfunction']
 ```
 
-**is_callable** & **is_pomise**
+**is_callable** & **is_promise**
 ```javascript
 
     var l = lw( ); // create the main lib instance
@@ -51,7 +51,7 @@
 ```
 
 **extend**
->Is inspired from jQuery extend function and using the same syntax
+>Is inspired from **jQuery** extend function and using the same syntax
 
 
 **clone**
