@@ -178,54 +178,61 @@
 
 ## Available properties
 
-**queue**
+**queue**.
 returns the current queue content.
 
 
-**queue_size**
+**queue_size**.
 returns the current queue size.
 
-**stack**
+**stack**.
 returns the current queue processing method, lifo, fifo or random
 
 
 
 ## Available methods
 
-**fifo( )**
+**fifo( )**.
+
 Parameters: none.
 Chainable: Yes.
 Change stack order processing from top to bottom (First-In-First-Out)
 
 
-**lifo( )**
+**lifo( )**.
+
 Parameters: none.
 Chainable: Yes.
 Change stack order processing from bottom to top (Lirst-In-First-Out)
 
-**random( )**
+**random( )**.
+
 Parameters: none.
 Chainable: Yes.
 Change stack order processing to random
 
-**inject( f, where )**
+**inject( f, where )**.
+
 Parameters: f: invocable [function], where: 'top' or 'bottom' [string].
 Chainable: Yes.
 Once the queue is already set, use this function to add one element to the queue ( top or bottom)
 
-**push( ...fA )**
+**push( ...fA )**.
+
 Parameters: fA: array of invocable [functions], or functions seperated by comma.
 Chainable: Yes.
 Add an unlimited number of elements to the bottom of the queue
 
 
-**unshift( ...fA )**
+**unshift( ...fA )**.
+
 Parameters: fA: array of invocable [functions], or functions seperated by comma.
 Chainable: Yes.
 Add an unlimited number of elements to the top of the queue
 
 
-**exec( e )**
+**exec( e )**.
+
 Parameters: e: any.
 Chainable: No.
 This is the function to be called last to run the functions in the queue.
