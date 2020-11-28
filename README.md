@@ -252,19 +252,28 @@ returns: promise
 
 **[ 1 ]**
 
+This example shows you how to use the storage engine\
+A store button to save the key value pair and a restore button to retrieve it\
+You can open he storage.js file and set the parameter to true or false to change the storage engine to session or permanent.
+this example is included in the list above and here is a ready made demo of it\
+check it out **https://tradingunited.org/tests/lwjs/storage.html**
+
+
+**[ 2 ]**
+
 4 Async-calls are being made ( simulating server requests ), these calls are supposed to be interdependant\
 **stage[4]->needs-->stage[3]->needs-->stage[2]->needs-->stage[1]->needs-->params** so the order of execution and result output are vital here.
 you will see how each call waits for the the previous to return before running.
 this example is included in the list above and here is a ready made demo of it\
 check it out **https://tradingunited.org/tests/lwjs/concurrency.html**
 
-**[ 2 ]**
+**[ 3 ]**
 
 A graphic demo shows the injection of the delay time between each call.
 this example is included in the list above and here is a ready made demo of it\
 check it out **https://tradingunited.org/tests/lwjs/animation.html**
 
-**[ 3 ]**
+**[ 4 ]**
 
 A math demo showing the implementation of function composition.
 this example is included in the list above and here is a ready made demo of it\
