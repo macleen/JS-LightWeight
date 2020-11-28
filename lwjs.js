@@ -174,13 +174,7 @@
         //*************************************************************
         
         clone: function ( o ) { 
-        
-            var primitives =['string', 'number', 'boolean', 'symbol', null, undefined, 'undefined'];
-            if ( !primitives.includes( this.type_of( o ))) 
-                    if ( typeof( o[Symbol.iterator] || o[Symbol.asyncIterator]) === 'function' )
-                        return [...o];
-            return o; 
-        
+                return typeof( o[Symbol.iterator] || o[Symbol.asyncIterator]) === 'function' ? [...o] : o;
         },
 
         /************************************************************* 
