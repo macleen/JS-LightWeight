@@ -231,9 +231,9 @@ Chainable: Yes\
 Add an unlimited number of elements to the top of the queue
 >** If you downloaded the animation example, before clicking the startdemo button try adding the following in the dev console to see how this function works
 ```javascript
-T4 = function(){$article1.style.color = 'red'}
-T5 = function(){$article2.style.color = 'red'}
-T6 = function(){$article3.style.color = 'red'}
+T4 = function(){$article1.style.color = 'blue'}
+T5 = function(){$article2.style.color = 'blue'}
+T6 = function(){$article3.style.color = 'blue'}
 article_pipe.unshift(mac.async_delay(700),T4, mac.async_delay(700), T5, mac.async_delay(700), T6, mac.async_delay(700));
 ```
 
