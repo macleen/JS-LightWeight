@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Testing the lw lightweight JS lib</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            .result-spans {
+                color: red;
+                margin-left: 1.rem;
+                font-size:1.8rem;
+                font-weight:bold;
+            }
+            #title {
+                background-color: #bca;
+                width: 40% !important;
+                height: 1.1em;
+                text-align: center;
+                border: 2px solid green;
+                margin: .5rem auto;
+                font-size: 1.5rem;
+                margin-bottom: 2rem;
+            }
+
+            ul > li {
+                font-size: 1.2rem;
+            }
+            div {
+                display: block !important;
+            }
+
+            div.block {
+                position: relative;
+                background-color: #abc;
+                width: 40px;
+                height: 40px;
+                float: left;
+                margin: 5px;
+            }
+            #elementToAnimate {
+                background: red;
+                }
+
+            #elementToAnimate.animate {
+                transition: left 500ms ease-in-out, top 500ms ease-in-out;
+            }
+        </style>        
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <h2 id="title" style="width:100%;">Storage demo</h2>
+        <h2 id="" style="width:100%;">Store</h2>        
+        <input name="key_to_store" id="key_to_store" placeholder="enter the key name">
+        <input name="value_to_store" id="value_to_store" placeholder="enter the key value">
+        <div id="store_btn" style="clear: left;font-size:4rem;width: 100%;text-align:center;">
+            <button id="store_value_btn" style="width:60%;font-size:1.4rem;">Store value</button>
+        </div>
+
+        <hr>
+        <h2 id="" style="width:100%;">Restore</h2>
+        <input name="key_to_restore" id="key_to_restore" placeholder="enter key name to restore">
+        <input name="value_to_restore" id="value_to_restore" placeholder="value" readonly="readonly">
+        <div id="animation_btns" style="clear: left;font-size:4rem;width: 100%;text-align:center;">
+            <button id="restore_value_btn" style="width:60%;font-size:1.4rem;">Restore value</button>
+        </div>
+
+        <script src="./lwjs.js"></script>        
+        <script src="./storage.js" async defer></script>
+    </body>
+</html>
