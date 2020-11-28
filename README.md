@@ -245,6 +245,9 @@ This is the function to be called last to run the functions in the queue.
 return: promise
 
 
+--------------------------------------------------------------------------
+
+
 ## Examples
 
 **[ 1 ]**
