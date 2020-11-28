@@ -254,7 +254,7 @@ returns: promise
 
 This example shows you how to use the storage engine\
 A store button to save the key value pair and a restore button to retrieve it\
-You can open he storage.js file and set the parameter to true or false to change the storage engine to session or permanent.
+You can open the storage.js file and set the parameter to true or false to change the storage engine to session or permanent.
 this example is included in the list above and here is a ready made demo of it\
 check it out **https://tradingunited.org/tests/lwjs/storage.html**
 
