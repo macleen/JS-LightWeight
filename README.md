@@ -239,10 +239,10 @@ article_pipe.unshift(mac.async_delay(700),T4, mac.async_delay(700), T5, mac.asyn
 
 
 **exec( e )**\
-Parameters: e: any\
+Parameters: e: any, this is the main parameter that will be handed over from one stage to the next (if present)\
 Chainable: No\
-This is the function to be called last to run the functions in the queue.
-return: promise
+This is the function to be called last to run the functions in the queue\
+returns: promise
 
 
 --------------------------------------------------------------------------
