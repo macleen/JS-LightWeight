@@ -216,7 +216,7 @@ Once the queue is already set, use this function to add one element to the queue
 **push( ...fA )**\
 Parameters: fA: array of invocable [functions], or functions seperated by comma\
 Chainable: Yes\
-Add an unlimited number of elements to the bottom of the queue\
+Add an unlimited number of elements to the bottom of the queue
 >** If you downloaded the animation example, before clicking the startdemo button try adding the following in the dev console to see how this function works
 ```javascript
 T1 = function(){$article1.style.color = 'red'}
