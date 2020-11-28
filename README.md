@@ -4,7 +4,7 @@
 
 ## Introduction
 
-**LightWeight-JS** is a small sized javascript library with components and functions that are most useful in many projects and other libraries, noticeably the storage functionality and the pipelining pattern which remains **reusable** through out the whole application. You can create pipelines consisting of one or more stages using **different payloads** passed from one stage to the next in the order you pre-select.
+**LightWeight-JS** is a small sized javascript library (3KB for the minified version) with components and functions that are most useful in many projects and other libraries, noticeably the storage functionality and the pipelining pattern which remains **reusable** through out the whole application. You can create pipelines consisting of one or more stages using **different payloads** passed from one stage to the next in the order you pre-select.
 
 
 ## Components
