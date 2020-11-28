@@ -176,7 +176,7 @@
 
 ```
 
-## Available properties
+## Available properties (Pipeline)
 
 **queue**\
 returns the current queue content.
@@ -190,7 +190,7 @@ returns the current queue processing method, lifo, fifo or random
 
 
 
-## Available methods
+## Available methods (Pipeline)
 
 **fifo( )**\
 Parameters: none\
