@@ -93,7 +93,8 @@
         lifo   : function( ) { this.stack = 'lifo'; return this; },
         fifo   : function( ) { this.stack = 'fifo'; return this; },
         random : function( ) { this.stack = 'random'; return this; },
-        // use append to queue and prepnd to queue instead of inject
+        push   : function(...fQ) { Array.prototype.push.call( this.queue, ...fQ ); return this },
+        unshift: function(...fQ) { Array.prototype.unshift.call( this.queue, ...fQ ); return this },
         inject : function(f, where) {
                                if ( typeof f === 'function' ) {
                                     where = !['top','bottom'].includes( where ) ? 'top' : where;
@@ -251,14 +252,10 @@
          * 
          ************************************************************* 
         */
-        async_delay: function( delay ) {
-                        return function(x) {
-                            return new Promise( res => {
-                                setTimeout( function(){
-                                    return res( x );
-                                }, delay);
-                            });
-                        }    
+        async_delay: function( t ) {
+                        return function( x ) {
+                            return new Promise( res => setTimeout(( ) => res( x ), t ));
+                        }
         },        
 
         /*
